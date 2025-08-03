@@ -46,7 +46,7 @@ python test_api.py
 # Exemplo de JSON para criação
 ```json
 {
-  "nome": "joao",
+  "nome": "lorenzo",
   "telefones": [
     {
       "numero": "1234-5678",
