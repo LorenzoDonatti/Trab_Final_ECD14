@@ -17,17 +17,18 @@ Uma API REST desenvolvida com **FastAPI** para gerenciar uma agenda de contatos.
 
 ---
 
-## 📦 Tecnologias
+## Tecnologias
 
 - Python 3.10+
 - FastAPI
 - Redis
 - Uvicorn
+- Docker
 - Docker Compose
 
 ---
 
-## ⚙️ Executando com Docker Compose
+## Executando com Docker Compose
 
 ```bash
 docker compose up --build
@@ -36,14 +37,19 @@ docker compose up --build
 Acesse a documentação automática em:
 http://localhost:8000/docs
 
-# Testando a API
+---
+
+## Testando a API
+
 Você pode usar ferramentas como curl, Postman ou executar o script abaixo:
 
 ```bash
 python test_api.py
 ```
 
-# Exemplo de JSON para criação
+---
+
+## Exemplo de JSON para criação
 ```json
 {
   "nome": "lorenzo",
@@ -56,7 +62,10 @@ python test_api.py
   "categoria": "familiar"
 }
 ```
-# Endpoints
+---
+
+## Endpoints
+
 | Método | Rota           | Descrição                 |
 |--------|----------------|---------------------------|
 | POST   | /agenda/       | Adiciona um novo contato  |
@@ -64,14 +73,20 @@ python test_api.py
 | GET    | /agenda/{nome} | Busca contato por nome    |
 | DELETE | /agenda/{nome} | Remove contato por nome   |
 
+---
 
-# Estrutura do diretório
-```css
+## Estrutura do diretório
+```bash
 .
-├── Dockerfile
-├── requirements.txt
 ├── src/
-│   └── main.py
-├── teste_agenda.py
+│   └── agenda_router.py
+│   └── redis_funcs.py
+│   └── schemas.py
+│   └── storage.py
+├── Dockerfile
+├── docker-compose.yaml
+├── requirements.txt
+├── test_api.py
+├── main.py
 └── README.md
 ```
